@@ -1,0 +1,166 @@
+@charset "utf-8";
+
+/**
+ * CIzACL
+ * 
+ * @copyright	Copyright (c) Schizzoweb Web Agency
+ * @website		http://www.schizzoweb.com
+ * @version		1.4
+ * @revision	2016-05-21
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ **/
+ 
+@import url(http://fonts.googleapis.com/css?family=Terminal+Dosis+Light|Yanone+Kaffeesatz&v2);
+body {
+	margin: 0 0 40px 0;
+}
+body, input, button, select, textarea {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333;
+}
+p {
+	line-height: 20px;
+	margin: 0;
+}
+h1 {
+	font-family: 'Terminal Dosis Light', Tahoma, sans-serif;
+	font-weight: normal;
+	text-shadow: 1px 1px 1px #777;
+	color: #3e6a8d;
+	margin: 0px;
+	margin-bottom: 20px;
+	font-size: 30px;
+}
+h2 {
+	font-family: 'Yanone Kaffeesatz', Tahoma, sans-serif;
+	text-shadow: 1px 1px 1px #333;
+	font-weight: normal;
+	color: #fff;
+	margin: 0px;
+	font-size: 30px;
+}
+h3 {
+	margin: 0px;
+	margin-bottom: 8px;
+	padding: 0px;
+}
+#header {
+	background: url(ui-cizacl/images/header-acl.jpg) no-repeat;
+	height: 230px;
+}
+#header_cb {
+	background: url(ui-cizacl/images/header-cb-acl.jpg) no-repeat;
+	height: 60px;
+	text-align: center;
+	padding-top: 20px;
+}
+#container, #container_cb {
+	padding: 20px;
+	padding-top: 0px;
+}
+input, button, select, textarea {
+	padding: 4px;
+	border: 1px solid #bbb;
+	color: #3e6a8d;
+}
+input:hover,
+button:hover,
+select:hover,
+textarea:hover	{
+	border: 1px solid #888;
+}
+input:focus,
+button:focus,
+select:focus,
+textarea:focus	{
+	border: 1px solid #5d9dd0;
+}
+::-webkit-input-placeholder {
+ color:    #999;
+}
+:-moz-placeholder {
+ color:    #999;
+}
+.hide {
+	display: none;
+}
+#jq_msg {
+	display: none;
+}
+.ui-msg {
+	padding: 10px;
+}
+.ui-pg-input	{
+	padding: 3px;
+}
+.ui-pg-selbox	{
+	padding: 1px;
+}
+
+/******************
+ ***	MENU	***
+ ******************/
+#menu	{
+	position: absolute;
+	top: 0px;
+	right: 200px;
+	width: 250px;
+	z-index: 100;
+}
+#menu #content	{
+	background: rgba(0,0,0,0.5);
+	padding: 10px;
+	display: none;
+}
+#menu #content ul	{
+	margin: 0px;
+	padding: 10px;
+	list-style: none;
+	text-align: center;
+}
+#menu #content ul li	{
+	padding: 8px;
+	border-bottom: 1px solid #333;
+}
+#menu #label	{
+	margin: 0px auto;
+	background: rgba(0,0,0,0.8);
+	text-align: center;
+	padding: 10px 20px;
+	border-top: 1px solid #000;
+	box-shadow: 0px 0px 5px #0c2132;
+	-moz-box-shadow: 0px 0px 5px #0c2132;
+	-webkit-box-shadow: 0px 0px 5px #0c2132;
+}
+#menu #content, #menu #label, #menu #content a, #menu #label a	{
+	color: #fff;
+	font-family: 'Yanone Kaffeesatz', Tahoma, sans-serif;
+	font-size: 18px;
+	text-shadow: 1px 1px 1px #333;
+	white-space: nowrap;
+	text-decoration: none;
+}
+#menu #content a, #menu #label a	{
+	display: block;
+}
+#menu #content ul li:hover,
+#menu #content ul li:focus	{
+	background: rgba(0,0,0,0.3);
+}
+.summary	{
+	font-family: 'Yanone Kaffeesatz', Tahoma, sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+}
+.summary strong	{
+	color: #888;
+	font-size: 120%;
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  .btn {
+    width: 70px;
+    height: 35px;
+  }
+  th {
+  text-align: center;
+  }
+  .modal-footer .btn {
+    width: 75px;
+  }
+  .container a{
+    text-decoration: none;
+  }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <p><h2>List Keuangan Karyawan November 2017 </h2></p>                                          
+  <table class="table table-condensed table-striped table-bordered table-hover table-responsive">
+    <tr>
+      <th width="50px">No</th>
+      <th>Nama Pegawai</th>
+      <th>Jabatan</th>
+      <th width="100px">Action</th>
+    </tr>
+    <tr>
+      <td height="50" style="padding: 10px;">1</td>
+      <td style="padding: 10px;"><a href="#demo" data-toggle="collapse"><span class="glyphicon glyphicon-collapse-down">Sultan</span></a></td>
+      <td style="padding: 10px;">Manager</td>
+      <td align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Gaji</button></td>
+    </tr> 
+    <tr id="demo" class="collapse">
+    <!-- <div id="demo" class="collapse">  -->
+      <td rowspan="4" colspan="4">
+      <table width="100%" rules="all">
+          <th width="50px">
+            No.
+          </th>
+          <th>
+            Parameter
+          </th>
+          <th>
+            Jumlah
+          </th>
+          <th width="100px">
+            Posting
+          </th>
+      <tr>
+        <td>1</td>
+        <td>Gaji</td>
+        <td>10</td>
+        <td align="center" style="padding: 10px;"><button type="button" class="btn btn-success">Posting</button></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Kesehatan</td>
+        <td>15</td>
+        <td align="center" style="padding:10px"><button type="button" class="btn btn-success">Posting</button></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Pinjaman</td>
+        <td>20</td>
+        <td align="center" style="padding: 10px;"><button type="button" class="btn btn-success">Posting</button></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Lorem</td>
+        <td>25</td>
+        <td align="center" style="padding: 10px;"><button type="button" class="btn btn-success">Posting</button></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Lorem</td>
+        <td>30</td>
+        <td align="center" style="padding: 10px;"><button type="button" class="btn btn-success">Posting</button></td>
+      </tr>
+      <tr>
+        <td colspan="2">Total</td>
+        <td>100</td>
+      </tr>
+      </table>
+      </div>
+      </td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td height="50" style="padding: 10px;">2</td>
+      <td style="padding: 10px;"><a href="#demo" data-toggle="collapse"><span class="glyphicon glyphicon-collapse-down">Arief</a></td>
+      <td style="padding: 10px;">Owner</td>
+      <td align="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Gaji</button></td>
+    </tr>
+  </table>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <table class="table table-condensed table-responsive" rules="all">
+            <tr>
+              <td width="50">No.</td>
+              <td>Nama Parameter Gaji</td>
+              <td>Jumlah</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Gaji</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Kesehatan</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Pinjaman</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Lorem</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Lorem</td>
+              <td></td>
+            </tr>
+
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span>
+          Close
+          </button>
+          <button type="button" class="btn btn-success">
+            <span class="glyphicon glyphicon-floppy-disk"></span>
+            Save  
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
