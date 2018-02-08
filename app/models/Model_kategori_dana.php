@@ -28,6 +28,22 @@ class Model_kategori_dana extends CI_Model {
 
 		return $this->db->query($query)->result();
 	}
+	function listkategori_4x() {
+		$query = "
+		SELECT 
+			*
+		FROM 
+			mst_akun
+		WHERE
+		    kode_akun = '40'
+			OR  kode_akun = '411'
+			OR  kode_akun = '412'
+
+		ORDER BY kode_akun
+		";
+
+		return $this->db->query($query)->result();
+	}
 	function listkategori(){
 		$query = "
 		SELECT 
@@ -56,8 +72,10 @@ class Model_kategori_dana extends CI_Model {
 		FROM 
 			mst_akun
 		WHERE
-		    kode_akun LIKE '5%'
-		ORDER BY kode_akun
+		    kode_akun LIKE '50'
+		    OR  kode_akun LIKE '511'
+		    OR  kode_akun LIKE '512'
+		ORDER BY kode_akun 
 		";
 
 		return $this->db->query($query)->result();

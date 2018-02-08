@@ -30,9 +30,9 @@
 							{
 								echo '<td>'.$b->nama.'</td>';
 								echo '<td align="center" width="10%">'; ?>
-								<a href="<?= base_url() ?>Kepengurusan/ubah?id=<?=md5($b->id)?>" title="Ubah Kepengurusan" data-toggle="tooltip"><img src="<?=base_url();?>assets/resources/edit.png" /></a>
+								<a href="<?= base_url() ?>kepengurusan/ubah?id=<?=md5($b->id)?>" title="Ubah Kepengurusan" data-toggle="tooltip"><img src="<?=base_url();?>assets/resources/edit.png" /></a>
 
-								<a onclick="return confirm('Apakah Anda yakin akan menghapus data ini?')" href="<?= base_url() ?>Kepengurusan/hapus?id=<?=md5($b->id)?>" title="Hapus Kepengurusan" data-toggle="tooltip"><img src="<?=base_url();?>assets/resources/hapus.png" /></a>
+								<a onclick="return confirm('Apakah Anda yakin akan menghapus data ini?')" href="<?= base_url() ?>kepengurusan/hapus?id=<?=md5($b->id)?>" title="Hapus Kepengurusan" data-toggle="tooltip"><img src="<?=base_url();?>assets/resources/hapus.png" /></a>
 								<?php echo '</td>'; echo '</tr>';
 							}
 							?>

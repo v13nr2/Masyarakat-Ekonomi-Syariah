@@ -43,7 +43,7 @@ if (!empty($menu)) {
                     <h3 class="box-title"><?= $judul ?></h3>
                 </div>
                 <div class="box-body">
-                    <form id="s" class="form-horizontal" autocomplete="off" method="post" action="<?= base_url() . 'acl/' . $act; ?>">
+                    <form id="s" class="form-horizontal" autocomplete="off" method="post" action="<?= base_url() . 'acl/' . $act ?>">
                         <input type="hidden" name="id" value="<?= $id ?>">
                         <div class="form-group">
                             <label class="control-label col-lg-2">Parent Menu</label>
@@ -69,19 +69,18 @@ if (!empty($menu)) {
                             <label class="control-label col-lg-2">Link Function</label>
                             <div class="col-lg-4">
                                 <?php
-//                                $opFunction = "class='form-control input-sm select2'";
-//                                $dtFunction = $this->db->get('cizacl_resources')->result();
-//                                $functions = array("" => "Pilih Data");
-//                                foreach ($dtFunction as $dfunction) {
-//                                    if ($dfunction->cizacl_resource_function <> "") {
-//                                        $functions[$dfunction->cizacl_resource_id] = $dfunction->cizacl_resource_controller . "/" . $dfunction->cizacl_resource_function;
-//                                    } else {
-//                                        $functions[$dfunction->cizacl_resource_id] = $dfunction->cizacl_resource_controller;
-//                                    }
-//                                }
-//                                echo form_dropdown('user_function_list_id', $functions, $link, $opFunction);
+                                $opFunction = "class='form-control input-sm select2'";
+                                $dtFunction = $this->db->get('cizacl_resources')->result();
+                                $functions = array("" => "Pilih Data");
+                                foreach ($dtFunction as $dfunction) {
+                                    if ($dfunction->cizacl_resource_function <> "") {
+                                        $functions[$dfunction->cizacl_resource_id] = $dfunction->cizacl_resource_controller . "/" . $dfunction->cizacl_resource_function;
+                                    } else {
+                                        $functions[$dfunction->cizacl_resource_id] = $dfunction->cizacl_resource_controller;
+                                    }
+                                }
+                                echo form_dropdown('user_function_list_id', $functions, $link, $opFunction);
                                 ?>
-                                <input type="text" class="form-control" name="link" maxlength="50" id="link" value="<?= $link; ?>" />
                             </div>
                         </div>
                         <div class="form-group">

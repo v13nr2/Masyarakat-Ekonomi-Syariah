@@ -55,6 +55,14 @@ WHERE A.id_jurnal = B.id_jurnal AND C.id_akun = B.id_akun
 		return $query->result();
 	}
 	
+	function validEditByTanggal($kode){
+		$this->db->select('tgl_jurnal');
+		$where = "kode_unik = '$kode'";
+		$this->db->where($where);
+		$this->db->from('trs_jurnal');
+		$data = $this->db->get()->row_array();
+		return $data["tgl_jurnal"];
+	}
 	
 	function list_jurnal_detail($x) {
 		

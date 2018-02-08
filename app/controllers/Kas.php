@@ -45,7 +45,6 @@ class Kas extends CI_Controller {
 			$akhir_periode = $pdata['akhir_periode'];
 			$awal_periode = $pdata['awal_periode'];
 			
-
 			$data_input = new DateTime(tgl_en($this->input->post('tgl')));
 			$expire_dt_awal = new DateTime($awal_periode);
 			$expire_dt_akhir = new DateTime($akhir_periode);

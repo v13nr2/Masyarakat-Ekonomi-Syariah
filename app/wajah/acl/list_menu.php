@@ -47,7 +47,7 @@
                                     <td>$no</td>
                                     <td>$dmenu->nama_menu</td>
                                     <td>$dmenu->nama_menu</td>
-                                    <td>$dmenu->link</td>
+                                    <td></td>
                                     <td>$dmenu->icon</td>
                                     <td>$dmenu->user_menu_index</td>
                                     <td align='center'>

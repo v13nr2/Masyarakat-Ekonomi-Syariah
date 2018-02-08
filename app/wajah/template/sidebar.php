@@ -1,4 +1,4 @@
- 
+
 <script>
 
     var base_url = "<?= base_url(); ?>";
@@ -45,8 +45,6 @@ $menu_c = $this->uri->segment(3);
                     <?php
                     $this->load->model('model_modul');
                     echo $ci->model_modul->get_parent();
-                    //echo $this->db->last_query();
-                    //die();
                     ?>
 
                 </ul>

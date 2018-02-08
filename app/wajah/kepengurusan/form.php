@@ -6,6 +6,8 @@ if(!empty($Kepengurusan)){
 	foreach($Kepengurusan as $k){
 		$id = $k->id;
 		$nama = $k->nama;
+
+		$act  = "ubah";
 	}
 }
 ?>
@@ -38,7 +40,7 @@ if(!empty($Kepengurusan)){
 							<div class="col-lg-2"></div>
 							<div class="col-lg-4">
 								<button type="submit" value="simpan" name="btnSimpan" class="btn btn-success btn-min"><i class="fa fa-save"></i> Simpan</button>
-								<?=anchor('Bank', '<i class="fa fa-angle-left"></i> Kembali', array('class'=>'btn btn-danger btn-min'))?>
+								<?=anchor('kepengurusan', '<i class="fa fa-angle-left"></i> Kembali', array('class'=>'btn btn-danger btn-min'))?>
 							</div>
 						</div>
 					</form>

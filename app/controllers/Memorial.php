@@ -6,6 +6,7 @@ class Memorial extends CI_Controller {
 		$this->load->model('model_akun');
 		$this->load->model('model_jurnal');
 		$this->load->helper('date');
+		$this->load->helper('jurnal_helper');
 		$this->load->library('user_agent');
 		$this->load->model('model_tutupbuku');
 	}
@@ -26,19 +27,10 @@ class Memorial extends CI_Controller {
 			
 			
 			//cek tahun berjalan
-			$pdata = $this->session->userdata('session_data'); //Retrive ur session
-
-			$tahun = $pdata['ses_tahun_buku'];
-					
-			if(substr($this->input->post('tgl'),-4) != $tahun){
-				
-				$res = array(
-					'status' => FALSE,
-					'msg' => 'Bukan tahun aktif '
-				);
-				die(json_encode($res));
-			}
 			
+			//validasi tanggal jurnal
+			inputOke($this->input->post('tgl'));
+
 			$kode_unik = base_convert(microtime(false), 10, 36);
 			
 			//buat nomor jurnal
@@ -57,7 +49,7 @@ class Memorial extends CI_Controller {
 			$nomor = nojurnal($id_counter);
 			//input header
 			$dt = array(
-					'no_jurnal' => 'JU/'.$nomor.'/'.$tb.'/'.$iduser, //$this->input->post('nojurnal'),
+					'no_jurnal' => date('Y').date('m').$nomor, //$this->input->post('nojurnal'),
 					'no_bukti' => $this->input->post('nobukti'),
 					'memo' => $this->input->post('keterangan'),
 					'tgl_dibuat' => date('Y-m-d H:i:s'),

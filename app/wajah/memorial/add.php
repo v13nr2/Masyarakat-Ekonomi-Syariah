@@ -53,7 +53,7 @@ input.kanan{ text-align:right; }
 						<div class="form-group ui-widget">
 							<label class="control-label col-sm-3" for="nama">No. Bukti</label>
 							<div class="col-sm-6">
-								<input type="text" class="form-control" id="nobukti" name="nobukti" placeholder="Nomor Nota" required>
+								<input type="text" class="form-control" id="nobukti" name="nobukti" readonly="readonly" placeholder="Automate" required>
 								<input type="hidden" class="form-control" id="nonota" name="nonota"/>
 							</div>
 						</div>
@@ -62,7 +62,7 @@ input.kanan{ text-align:right; }
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="nama">Tanggal</label>
 							<div class="col-sm-6">
-								<input type="text" name="tgl" class="form-control" id="tgl" placeholder="Tanggal" required>
+								<input type="text" name="tgl" class="form-control" id="tglx" placeholder="Tanggal" value="<?php echo date('d-m-Y');?>" readonly required>
 							</div>
 						</div>
 					</div>

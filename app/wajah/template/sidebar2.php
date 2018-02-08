@@ -14,9 +14,7 @@ $menu_c = $this->uri->segment(3);
         <aside class="main-sidebar">
             <section class="sidebar">
                 <ul class="nav side-menu" style="width: 230px; height:500px; overflow: auto">
-                    
                     <li <?php if ($menu_a == "" || $menu_a == "welcome") echo 'class="active"'; ?>><a href="<?= base_url() ?>"><i class="fa fa-dashboard"></i> <span class="kuncinng">Dashboard</span></a></li>
-                    
                     <li <?php if ($menu_a == "master_data") echo 'class="active"'; ?> class="treeview">
                         <a href="#"><i class="fa fa-list"></i> <span>Parameter</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                         <ul class="treeview-menu">

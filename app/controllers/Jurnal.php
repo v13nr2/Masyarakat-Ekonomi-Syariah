@@ -39,7 +39,24 @@ class Jurnal extends CI_Controller {
 		$data['mobile']		= $this->agent->is_mobile();
 		$data['judul'] 		= "Buat Jurnal";
 		$data['akun'] 		= $this->model_akun->list_akun()->result();
-		$data['no_jurnal'] 	= $this->input->post('no_jurnal');
+
+		$this->load->model('Model_kas');
+			$nourut =  $this->Model_kas->nourut();
+			$dt = array(
+					'jenis_jurnal' => 'BKM', //$this->input->post('nojurnal'),
+					'urut' => $nourut+1,
+					'tahun' => date('Y'),
+					'bulan' => date('m'),
+					'ip' => $this->input->post('kreditur'),
+					'user' => $this->input->post('keterangan')
+				);
+			$id_counter = $this->Model_kas->saveCounter($dt);
+
+			$iduser =  $pdata['ses_user_id'];
+			$this->load->helper('nomor_helper');
+			$nomor = nojurnal($nourut+1);
+
+		$data['no_jurnal'] = date('Y').date('m').$nomor; 	
 		$data['no_bukti'] 	= $this->input->post('no_bukti');
 		$data['memo'] 		= $this->input->post('memo');
 		$data['tgl_jurnal'] = $this->input->post('tgl_jurnal');
@@ -51,7 +68,9 @@ class Jurnal extends CI_Controller {
 		if($data['no_jurnal']=="" || $data["memo"]=="" || $data["tgl_jurnal"]=="")
 		{
 			$data['tgl_jurnal'] = date('d-m-Y');
-			$data['no_jurnal'] 	= $tmp_no_jurnal;
+			//$data['no_jurnal'] 	= $tmp_no_jurnal;
+
+			$data['no_jurnal'] = date('Y').date('m').$nomor; 	
 		}
 		else
 		{
@@ -140,8 +159,16 @@ class Jurnal extends CI_Controller {
 	}
     
     public function delete($x){
-        
         $kode       = $this->uri->segment(3);
+        
+		//tutup harian
+		$tanggaldb = $this->model_jurnal->validEditByTanggal($kode);
+		if($tanggaldb < date('Y-m-d')){
+			echo '<script>alert("Sudah lewat Hari.");window.history.back();</script>';
+			return false;
+		}
+
+
         $data["id_delete"] = $this->model_jurnal->del_jurnal_detail($kode);
         
         $this->db->where('id_jurnal', $data["id_delete"]["id_jurnal"]);
@@ -169,6 +196,13 @@ class Jurnal extends CI_Controller {
 		$memo 		= $this->input->post('memo');
 		$tgl_jurnal = $this->input->post('tgl_jurnal');
 		$total 		= $this->input->post('total');
+
+
+		//tutup harian
+		$tanggaldb = $this->model_jurnal->validEditByTanggal($kode_unik);
+		if($tanggaldb < date('Y-m-d')){
+			echo '<script>alert("Sudah lewat Hari.");window.history.back();</script>';
+		}
 
 		if($no_jurnal=="" || $memo=="" || $tgl_jurnal=="")
 		{

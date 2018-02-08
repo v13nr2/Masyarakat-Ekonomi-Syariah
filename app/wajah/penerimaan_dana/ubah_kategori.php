@@ -69,6 +69,24 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label class="control-label col-lg-2">GL</label>
+							<div class="col-lg-4">
+								<select class="form-control selectnot"  name="gl">
+								    	<option value="">-- Pilih Akun --</option>
+									<?php
+									foreach($akun4 as $p){
+										if($p->kode_akun==$penerimaan_dana["gl"]){
+											$select = "selected";
+										}else{
+											$select = "";
+										}
+										echo "<option $select value='$p->kode_akun'>".$p->nama_akun."=>".$p->kode_akun."</option>";
+									}
+									?>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
 							<div class="col-lg-2"></div>
 							<div class="col-lg-4">
 								<button type="submit" value="simpan" name="btnSimpan" class="btn btn-success btn-min"><i class="fa fa-save"></i> Simpan</button>

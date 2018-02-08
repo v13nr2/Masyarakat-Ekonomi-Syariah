@@ -111,8 +111,7 @@ class Login extends CI_Controller {
 							'awal_periode'  =>  $tahunbuku["awal"],
 							'akhir_periode'  =>  $tahunbuku["akhir"],
 							'ses_tahun_buku'  =>  $organisasi["periode_tahun_buku"],
-							'ses_user_id'  =>  $row->id_pengguna,
-							'id_group'  =>  $row->user_cizacl_role_id_pg
+							'ses_user_id'  =>  $row->id_pengguna
 						   );  // pass ur data in the array
 
 					$this->session->set_userdata('session_data', $pdata); //Sets the session

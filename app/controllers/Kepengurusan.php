@@ -14,7 +14,7 @@ class Kepengurusan extends CI_Controller {
 	{
 		$data['judul'] 		= 'Daftar Kepengurusan';
 		$data['bank'] 	= $this->Model_kepengurusan->listKepengurusan();
-		$this->template->view_baru('Kepengurusan/data', $data);
+		$this->template->view_baru('kepengurusan/data', $data);
 	}
 
 	public function tambah()
@@ -31,7 +31,7 @@ class Kepengurusan extends CI_Controller {
 			{
 				$message = alert_php2('Proses Gagal. ', 'error', 'Data gagal disimpan');
 				$this->session->set_userdata($this->config->item('ses_message'), $message);
-				redirect(base_url().'Kepengurusan');
+				redirect(base_url().'kepengurusan');
 			} else 
 			{
 				$data_create = array(
@@ -40,10 +40,10 @@ class Kepengurusan extends CI_Controller {
 				$this->db->insert('mst_kepengurusan', $data_create);
 				$message = alert_php2('Proses berhasil. ', 'success', 'Data berhasil disimpan');
 				$this->session->set_userdata($this->config->item('ses_message'), $message);
-				redirect(base_url().'Kepengurusan');
+				redirect(base_url().'kepengurusan');
 			}
 		}
-		$this->template->view_baru('Kepengurusan/form', $data);
+		$this->template->view_baru('kepengurusan/form', $data);
 	}
 
 	public function ubah()
@@ -64,13 +64,13 @@ class Kepengurusan extends CI_Controller {
 					'nama' 			=> $this->input->post('nama')
 				);
 				$key['id'] = $this->input->post('id');
-				$this->db->update('mst_epengurusan', $data_create, $key);
+				$this->db->update('mst_kepengurusan', $data_create, $key);
 				$message = alert_php2('Proses berhasil. ', 'success', 'Data berhasil disimpan');
 				$this->session->set_userdata($this->config->item('ses_message'), $message);
 				redirect(base_url().'Kepengurusan');
 			}
 		}
-		$this->template->view_baru('Kepengurusan/form', $data);
+		$this->template->view_baru('kepengurusan/form', $data);
 	}
 
 	public function hapus()
@@ -80,11 +80,11 @@ class Kepengurusan extends CI_Controller {
 		if($delete){
 			$message = alert_php2('Proses berhasil. ', 'success', 'Data berhasil dihapus');
 			$this->session->set_userdata($this->config->item('ses_message'), $message);
-			redirect(base_url().'Kepengurusan');
+			redirect(base_url().'kepengurusan');
 		}else{
 			$message = alert_php2('Proses gagal. ', 'error', 'Data gagal dihapus');
 			$this->session->set_userdata($this->config->item('ses_message'), $message);
-			redirect(base_url().'Kepengurusan');
+			redirect(base_url().'kepengurusan');
 		}
 	}
 

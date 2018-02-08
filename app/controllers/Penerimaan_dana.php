@@ -14,7 +14,8 @@ class Penerimaan_dana extends CI_Controller {
 	public function tambah() {
 		$data['judul'] 		= 'Tambah Penyaluran Dana';
 		$data['errors'] 	= '';
-		$data['akun']       = $this->model_kategori_dana->listkategori_5();
+		$data['akun']       = $this->model_kategori_dana->listkategori_4();
+		$data['akun4']       = $this->model_kategori_dana->listkategori_4x();
 		$data['penyedia']       = $this->model_penerimaan_dana->penyedia();
 		$data['kategori']	= $this->model_kategori_dana->listkategori();
 		$company_id = $this->session->userdata($this->config->item('ses_company_id'));
@@ -29,6 +30,7 @@ class Penerimaan_dana extends CI_Controller {
 				    'jenis_dana' => $this->input->post('jenis_dana'), 
 				    'nilai' => $this->input->post('nilai'), 
 				    'keterangan' => $this->input->post('keterangan'),
+				    'gl' => $this->input->post('gl'),
 				    'penyedia_dana_id' => $this->input->post('penyedia_dana_id')  
 				    );
 				$this->db->insert('tbl_penerimaan_dana', $data_create);
@@ -44,7 +46,8 @@ class Penerimaan_dana extends CI_Controller {
 		$data['judul'] 		= 'Ubah Penerimaan Dana';
 		$data['errors'] 	= '';
 		$data['penyedia']       = $this->model_penerimaan_dana->penyedia();
-		$data['akun']       = $this->model_kategori_dana->listkategori_5();
+		$data['akun']       = $this->model_kategori_dana->listkategori_4();
+		$data['akun4']       = $this->model_kategori_dana->listkategori_4x();
 		$data['kategori']	= $this->model_kategori_dana->listkategori();
 		$data['penerimaan_dana'] 	= $this->model_penerimaan_dana->getPenerimaan_dana($id_kategori_dana);
 		$btnSimpan = $this->input->post('btnSimpan');
@@ -57,6 +60,7 @@ class Penerimaan_dana extends CI_Controller {
 				    'jenis_dana' => $this->input->post('jenis_dana'), 
 				    'nilai' => $this->input->post('nilai'), 
 				    'keterangan' => $this->input->post('keterangan'),
+				    'gl' => $this->input->post('gl'),
 				    'penyedia_dana_id' => $this->input->post('penyedia_dana_id')  
 				);
 				$where = "md5(id) = '$id_kategori_dana' ";

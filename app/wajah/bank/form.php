@@ -7,6 +7,9 @@ $atas_nama   = "";
 $no_rek = "";
 $jenis = "";
 $biaya_admin = "";
+$tgl_buka = "";
+$aktif = "";
+$gl = "";
 $act  = "tambah";
 if(!empty($bank)){
 	foreach($bank as $k){
@@ -18,6 +21,9 @@ if(!empty($bank)){
 		$no_rek = $k->no_rek;
 		$jenis = $k->jenis;
         $biaya_admin =  $k->biaya_admin;
+		$tgl_buka =  $k->tanggal_buka;
+		$aktif =  $k->aktif;
+		$gl =  $k->gl;
 		$act = "ubah";	
 	}
 }
@@ -66,6 +72,12 @@ if(!empty($bank)){
 							</div>
 						</div>
 						<div class="form-group">
+							<label class="control-label col-lg-2">Tanggal Buka Rekening</label>
+							<div class="col-lg-4">
+								<input type="text" class="form-control" name="tanggal_buka" id="tgl" value="<?= tgl_indo2($tgl_buka);?>" />
+							</div>
+						</div>
+						<div class="form-group">
 							<label class="control-label col-lg-2">No Rekening</label>
 							<div class="col-lg-4">
 								<input type="text" class="form-control" name="no_rek" id="no_rek" value="<?= $no_rek ?>" />
@@ -88,6 +100,34 @@ if(!empty($bank)){
 							</div>
 						</div>
 						<div class="form-group">
+							<label class="control-label col-lg-2">GL</label>
+							<div class="col-lg-4">
+								<select class="form-control selectnot"  name="gl">
+								    	<option value="">-- Pilih Akun --</option>
+									<?php
+									foreach($akun as $p){
+										if($p->kode_akun==$gl){
+											$select = "selected";
+										}else{
+											$select = "";
+										}
+										echo "<option $select value='$p->kode_akun'>".$p->nama_akun."=>".$p->kode_akun."</option>";
+									}
+									?>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-lg-2">Aktif</label>
+							<div class="col-lg-4">
+								<select name="aktif" class="form-control" >
+									<option value="">-Pilih-</option>
+									<option value="Ya" <?php if($aktif=="Ya") { ?> selected <?php } ?>>Ya</option>
+									<option value="Tidak" <?php if($aktif=="Tidak") { ?> selected <?php } ?>>Tidak</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
 							<div class="col-lg-2"></div>
 							<div class="col-lg-4">
 								<button type="submit" value="simpan" name="btnSimpan" class="btn btn-success btn-min"><i class="fa fa-save"></i> Simpan</button>
@@ -100,3 +140,9 @@ if(!empty($bank)){
 		</div>
 	</div>
 </section>
+<script>
+	$(function() {
+		
+		$("#tgl").datepicker({'dateFormat':'dd-mm-yy'});
+	});
+</script>

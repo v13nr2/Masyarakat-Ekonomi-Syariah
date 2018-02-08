@@ -84,6 +84,7 @@
 											echo '<a data-toggle="tooltip" href="'.base_url('jurnal/detail/'.$b->kode_unik).'" title="Detail '.$b->no_jurnal.'" class="btn btn-success btn-xs">Detail</a>&nbsp;';
 											?>
 											<a onclick="return confirm('Apakah Anda yakin akan menghapus data ini?')"  href="<?= base_url() ?>jurnal/delete/<?php echo $b->kode_unik;?>" title="Delete" class="btn btn-delete btn-xs">Delete</a>
+											<a onclick="return confirm('Apakah Anda yakin akan Mengajukan otorisasi data ini?')"  href="<?= base_url() ?>jurnal/otorize/<?php echo $b->kode_unik;?>" title="Otorize" class="btn btn-delete btn-xs">Otorize</a>
 											<?php echo '</td>'; echo '</tr>';
 										} ?>
 									</tbody>
