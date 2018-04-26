@@ -10,7 +10,7 @@ $config['ses_company_id'] = 'ses_company_id'; /* |------------------------------
 
 //$http = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 's' : '') . '://';
 //$newurl = str_replace("index.php", "", $_SERVER['SCRIPT_NAME']);
-$config['base_url'] = "http://localhost/mes2/"; 
+$config['base_url'] = "http://localhost:88/git/"; 
 
 //$config['base_url'] = "http://" . $_SERVER['HTTP_HOST'] . str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
 /* |-------------------------------------------------------------------------- | Index File |-------------------------------------------------------------------------- | | Typically this will be your index.php file, unless you've renamed it to | something else. If you are using mod_rewrite to remove the page set this | variable so that it is blank. | */

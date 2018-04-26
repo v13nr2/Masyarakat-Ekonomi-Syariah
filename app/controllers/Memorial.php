@@ -6,7 +6,7 @@ class Memorial extends CI_Controller {
 		$this->load->model('model_akun');
 		$this->load->model('model_jurnal');
 		$this->load->helper('date');
-		$this->load->helper('jurnal_helper');
+		//$this->load->helper('jurnal_helper');
 		$this->load->library('user_agent');
 		$this->load->model('model_tutupbuku');
 	}
